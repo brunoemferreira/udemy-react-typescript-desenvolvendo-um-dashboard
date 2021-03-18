@@ -18,6 +18,7 @@
 ## 🛠️ Tecnologias e Bibliotecas 
 
 * ReactJs
+  * Styled Components
 * TypeScript
 
 
