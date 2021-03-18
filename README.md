@@ -1,21 +1,38 @@
+<!-- ************************************* Título ********************************************* -->
 <h1 align="center">Udemy - React \ TypeScript - Desenvolvendo um Dashboard</h1>
 
-##  Sobre o Projeto
+<!-- ************************************* Baadges ********************************************* -->
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/brunoemferreira/udemy-react-typescript-desenvolvendo-um-dashboard?color=%2304D361">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/brunoemferreira/udemy-react-typescript-desenvolvendo-um-dashboard">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/brunoemferreira/udemy-react-typescript-desenvolvendo-um-dashboard">
+</p>
 
-## Tecnologias e Bibliotecas 
+<p align="center" > Em Construção 17/03/2021 </p> 
+
+
+## 🚀 Sobre o Projeto
+
+## 🖼️ Imagens do Projeto
+
+## 🛠️ Tecnologias e Bibliotecas 
 
 * ReactJs
 * TypeScript
 
 
-
-## Como Rodar o Projeto 
+## 🎲 Rodando o Projeto
 ```bash
 # Clone este repositório
 $ git clone https://github.com/brunoemferreira/udemy-react-typescript-desenvolvendo-um-dashboard.git
 
 # Acesse a pasta do Projeto
 $ cd minha-carteira
+
+# Instale as Bibliotecas
+$ yarn install
+ou
+$ npm install
 
 # execute o comando
 $ yarn start
@@ -25,7 +42,5 @@ $ npm start
 # O projeto será carregado no seguinte endereço http://localhost:3000
 
 ```
-
-```
-## 
-
+---
+⌨️ com ❤️ por [Bruno Eduardo](https://gist.github.com/brunoemferreira) 😊
