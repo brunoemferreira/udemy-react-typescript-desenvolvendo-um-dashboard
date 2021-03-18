@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Dashboard from './pages/Dashboard';
+import List from './pages/List';
+import SignIn from './pages/SignIn';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Dashboard />
   </React.StrictMode>,
   document.getElementById('root')
 );
