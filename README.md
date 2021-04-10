@@ -8,7 +8,7 @@
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/brunoemferreira/udemy-react-typescript-desenvolvendo-um-dashboard">
 </p>
 
-<p align="center" > Em Construção 17/03/2021 </p> 
+<p align="center" > 🚧 Em Construção 17/03/2021 🚧 </p> 
 
 
 ## 🚀 Sobre o Projeto
