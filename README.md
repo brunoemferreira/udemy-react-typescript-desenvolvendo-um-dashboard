@@ -17,9 +17,11 @@
 
 ## 🛠️ Tecnologias e Bibliotecas 
 
-* ReactJs
-  * Styled Components
-* TypeScript
+* [ReactJs](https://pt-br.reactjs.org/)
+  * [Styled Components](https://styled-components.com/)
+  * [React Switch](https://www.npmjs.com/package/react-switch)
+  * [React Icons]()
+* [TypeScript](https://www.typescriptlang.org/)
 
 
 ## 🎲 Rodando o Projeto
