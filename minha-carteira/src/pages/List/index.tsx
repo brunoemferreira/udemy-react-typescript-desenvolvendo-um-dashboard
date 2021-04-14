@@ -1,8 +1,9 @@
 import React from 'react';
 import ContentHeader from '../../components/ContentHeader';
+import HistoryFinanceCard from '../../components/HistoryFinanceCard';
 import SelectInput from '../../components/SelectInput';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const List: React.FC = () => {
   const frutas = [
@@ -16,6 +17,160 @@ const List: React.FC = () => {
       <ContentHeader title="Lista" lineColor="red" >
         <SelectInput options={frutas} />
       </ContentHeader>
+      <Content>
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+        <HistoryFinanceCard
+          cardColor="#313862"
+          tagColor="#E44c4E"
+          title="Conta de Luz"
+          subtitle="27/07/2021"
+          amount="R$ 130,00"
+
+        />
+      </Content>
     </Container>
   )
 }
