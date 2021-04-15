@@ -1,9 +1,13 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import ContentHeader from '../../components/ContentHeader';
 import HistoryFinanceCard from '../../components/HistoryFinanceCard';
 import SelectInput from '../../components/SelectInput';
 
+import gains from '../../repositories/gains';
+import expenses from '../../repositories/expenses';
+
 import { Container, Content, Filters } from './styles';
+import { isTemplateMiddle, reduceEachTrailingCommentRange } from 'typescript';
 
 interface IRouteParams {
   match: {
@@ -13,9 +17,22 @@ interface IRouteParams {
   }
 }
 
+interface IData {
+  id: string;
+  description: string;
+  amountFormatted: string;
+  type: string;
+  frequency: string;
+  dataFormatted: string;
+  tagColor: string;
+}
+
 const List: React.FC<IRouteParams> = ({ match }) => {
+  const [data, setData] = useState<IData[]>([]);
+
   const { type } = match.params;
 
+  // Quando mudar o valor de type ele atualiza a tela 
   const title = useMemo(() => {
     return type === 'entry-balance' ? {
       title: 'Entradas',
@@ -27,8 +44,9 @@ const List: React.FC<IRouteParams> = ({ match }) => {
       };
   }, [type]);
 
-
-
+  const listData = useMemo(() => {
+    return type === 'entry-balance' ? gains : expenses;
+  }, [type])
 
   const months = [
     { value: 1, label: 'Janeiro' },
@@ -51,6 +69,23 @@ const List: React.FC<IRouteParams> = ({ match }) => {
 
   ];
 
+  useEffect(() => {
+    const reponse = listData.map(item => {
+      return {
+        id: String(Math.random() * data.length),
+        description: item.description,
+        amountFormatted: item.amount,
+        type: item.type,
+        frequency: item.frequency,
+        dataFormatted: item.date,
+        tagColor: item.frequency === 'recorrente' ? '#4E41F0' : '#E44C4E',
+      }
+    })
+
+    setData(reponse);
+
+  }, []);
+
   return (
     <Container>
       <ContentHeader title={title.title} lineColor={title.lineColor} >
@@ -72,13 +107,17 @@ const List: React.FC<IRouteParams> = ({ match }) => {
           </button>
       </Filters>
       <Content>
-        <HistoryFinanceCard
-          tagColor="#E44c4E"
-          title="Conta de Luz"
-          subtitle="27/07/2021"
-          amount="R$ 130,00"
-        />
-
+        {
+          data.map(item => (
+            <HistoryFinanceCard
+              key={item.id}
+              tagColor={item.tagColor}
+              title={item.description}
+              subtitle={item.dataFormatted}
+              amount={item.amountFormatted}
+            />
+          ))
+        }
       </Content>
     </Container>
   )
