@@ -8,6 +8,8 @@ import expenses from '../../repositories/expenses';
 
 import { Container, Content, Filters } from './styles';
 import { isTemplateMiddle, reduceEachTrailingCommentRange } from 'typescript';
+import formatCurrency from '../../utils/formatCurrency';
+import formatDate from '../../utils/formatDate';
 
 interface IRouteParams {
   match: {
@@ -74,10 +76,10 @@ const List: React.FC<IRouteParams> = ({ match }) => {
       return {
         id: String(Math.random() * data.length),
         description: item.description,
-        amountFormatted: item.amount,
+        amountFormatted: formatCurrency(Number(item.amount)),
         type: item.type,
         frequency: item.frequency,
-        dataFormatted: item.date,
+        dataFormatted: formatDate(item.date),
         tagColor: item.frequency === 'recorrente' ? '#4E41F0' : '#E44C4E',
       }
     })
