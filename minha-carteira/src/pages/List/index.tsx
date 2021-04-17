@@ -31,6 +31,8 @@ interface IData {
 
 const List: React.FC<IRouteParams> = ({ match }) => {
   const [data, setData] = useState<IData[]>([]);
+  const [monthSelected, setMonthSelected] = useState<string>(String(new Date().getMonth()));
+  const [yearSelected, setYearSelected] = useState<string>(String(new Date().getFullYear()));
 
   const { type } = match.params;
 
@@ -72,9 +74,19 @@ const List: React.FC<IRouteParams> = ({ match }) => {
   ];
 
   useEffect(() => {
-    const reponse = listData.map(item => {
+    // Retorna a Data filtrada pelo ano e pelo mes usando filter 
+    const filterdDate = listData.filter(item => {
+      const date = new Date(item.date);
+      const month = String(date.getMonth());
+      const year = String(date.getFullYear());
+
+      return month === monthSelected && year === yearSelected;
+    });
+
+    const formattedData = filterdDate.map(item => {
+
       return {
-        id: String(Math.random() * data.length),
+        id: String(new Date().getTime()) + item.amount,
         description: item.description,
         amountFormatted: formatCurrency(Number(item.amount)),
         type: item.type,
@@ -84,15 +96,15 @@ const List: React.FC<IRouteParams> = ({ match }) => {
       }
     })
 
-    setData(reponse);
+    setData(formattedData);
 
-  }, []);
+  }, [listData, monthSelected, yearSelected]);
 
   return (
     <Container>
       <ContentHeader title={title.title} lineColor={title.lineColor} >
-        <SelectInput options={months} />
-        <SelectInput options={years} />
+        <SelectInput options={months} onChange={(e) => setMonthSelected(e.target.value)} defaultValue={monthSelected} />
+        <SelectInput options={years} onChange={(e) => setYearSelected(e.target.value)} defaultValue={yearSelected} />
       </ContentHeader>
       <Filters>
         <button
