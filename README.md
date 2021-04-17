@@ -20,7 +20,8 @@
 * [ReactJs](https://pt-br.reactjs.org/)
   * [Styled Components](https://styled-components.com/)
   * [React Switch](https://www.npmjs.com/package/react-switch)
-  * [React Icons]()
+  * [React Icons](https://react-icons.github.io/react-icons/)
+  * [UUID v4](https://www.npmjs.com/package/uuidv4)
 * [TypeScript](https://www.typescriptlang.org/)
 
 
