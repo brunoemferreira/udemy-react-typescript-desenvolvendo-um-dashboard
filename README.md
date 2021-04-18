@@ -23,6 +23,7 @@
   * [React Icons](https://react-icons.github.io/react-icons/)
   * [UUID v4](https://www.npmjs.com/package/uuidv4)
   * [React CountUp](https://www.npmjs.com/package/react-countup)
+  * [Recharts](https://recharts.org/en-US/)
 * [TypeScript](https://www.typescriptlang.org/)
 
 
