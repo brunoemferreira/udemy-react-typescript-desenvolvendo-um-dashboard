@@ -9,6 +9,10 @@ import { Container, Content } from './styles';
 
 import gains from '../../repositories/gains';
 import expenses from '../../repositories/expenses';
+import MessaBox from '../../components/MessageBox';
+
+import happyImg from '../../assets/happy.svg';
+import sadImg from '../../assets/sad.svg';
 
 interface IRouteParams {
   match: {
@@ -87,6 +91,10 @@ const Dashboard: React.FC<IRouteParams> = ({ match }) => {
         <WalletBox title={'Entradas'} amount={5000.00} footerLabel={'atualizado com base nas entradas'} icon={'arrowUp'} color={'#F7931B'} />
         <WalletBox title={'Saídas'} amount={4850.00} footerLabel={'atualizado com base nas saídas'} icon={'arrowDown'} color={'#E44C4E'} />
       </Content>
+      <MessaBox title={'Muito Bem!'}
+        description={'Sua carteira está positiva!'}
+        footerText={'Continue assim. Considere investir o seu saldo.'}
+        icon={happyImg} />
     </Container>
   )
 }
