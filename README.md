@@ -22,6 +22,7 @@
   * [React Switch](https://www.npmjs.com/package/react-switch)
   * [React Icons](https://react-icons.github.io/react-icons/)
   * [UUID v4](https://www.npmjs.com/package/uuidv4)
+  * [React CountUp](https://www.npmjs.com/package/react-countup)
 * [TypeScript](https://www.typescriptlang.org/)
 
 

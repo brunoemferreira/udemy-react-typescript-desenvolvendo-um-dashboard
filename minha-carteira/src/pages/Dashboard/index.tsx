@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput';
+import WalletBox from '../../components/WalletBox';
 
 import listOfMonths from '../../utils/months';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 import gains from '../../repositories/gains';
 import expenses from '../../repositories/expenses';
@@ -81,6 +82,11 @@ const Dashboard: React.FC<IRouteParams> = ({ match }) => {
           onChange={(e) => handleYearSelected(e.target.value)}
           defaultValue={yearSelected} />
       </ContentHeader>
+      <Content>
+        <WalletBox title={'Saldo'} amount={150.00} footerLabel={'atualizado com base nas entradas e saídas'} icon={'dollar'} color={'#4E41F0'} />
+        <WalletBox title={'Entradas'} amount={5000.00} footerLabel={'atualizado com base nas entradas'} icon={'arrowUp'} color={'#F7931B'} />
+        <WalletBox title={'Saídas'} amount={4850.00} footerLabel={'atualizado com base nas saídas'} icon={'arrowDown'} color={'#E44C4E'} />
+      </Content>
     </Container>
   )
 }
