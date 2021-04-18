@@ -48,7 +48,7 @@ const List: React.FC<IRouteParams> = ({ match }) => {
     if (movimentType === 'entry-balance') {
       return {
         title: 'Entradas',
-        lineColor: '#F79318',
+        lineColor: '#4E41F0',
         listData: gains
       }
     } else {

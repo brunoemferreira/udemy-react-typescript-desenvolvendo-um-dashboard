@@ -1,20 +1,85 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput';
 
+import listOfMonths from '../../utils/months';
+
 import { Container } from './styles';
 
-const Dashboard: React.FC = () => {
-  const options = [
-    { value: 'Bruno', label: 'Bruno' },
-    { value: 'Emanuele', label: 'Emanuele' },
-    { value: 'Victor', label: 'Victor' }
-  ]
+import gains from '../../repositories/gains';
+import expenses from '../../repositories/expenses';
+
+interface IRouteParams {
+  match: {
+    params: {
+      type: string;
+    }
+  }
+}
+
+const Dashboard: React.FC<IRouteParams> = ({ match }) => {
+  const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
+  const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear());
+
+  const movimentType = match.params.type;
+
+  const months = useMemo(() => {
+    return listOfMonths.map((month, index) => {
+      return {
+        value: index + 1,
+        label: month,
+      }
+    })
+  }, []);
+
+  const years = useMemo(() => {
+    let uniqueYears: number[] = [];
+
+    [...expenses, ...gains].forEach(item => {
+      const date = new Date(item.date);
+      const year = date.getFullYear();
+      // includes verifica se o ano esta dentro da lista
+      if (!uniqueYears.includes(year)) {
+        uniqueYears.push(year)
+      }
+    });
+    return uniqueYears.map(year => {
+      return {
+        value: year,
+        label: year,
+      }
+    })
+  }, []);
+
+  const handleMonthSelected = (month: string) => {
+    try {
+      const parseMonth = Number(month);
+      setMonthSelected(parseMonth);
+    } catch (error) {
+      throw new Error('Invalid month value.')
+    }
+  }
+
+  const handleYearSelected = (year: string) => {
+    try {
+      const parseYear = Number(year);
+      setMonthSelected(parseYear);
+    } catch (error) {
+      throw new Error('Invalid Year value.')
+    }
+  }
 
   return (
     <Container>
-      <ContentHeader title="Dashboard" lineColor="#E44c44" >
-        <SelectInput options={options} onChange={(e) => { }} />
+      <ContentHeader title="Dashboard" lineColor="#F7931B" >
+        <SelectInput
+          options={months}
+          onChange={(e) => handleMonthSelected(e.target.value)}
+          defaultValue={monthSelected} />
+        <SelectInput
+          options={years}
+          onChange={(e) => handleYearSelected(e.target.value)}
+          defaultValue={yearSelected} />
       </ContentHeader>
     </Container>
   )
